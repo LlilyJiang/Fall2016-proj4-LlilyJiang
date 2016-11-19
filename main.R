@@ -61,6 +61,9 @@ library("slam")
 #summary(col_sums(lyr[,-1]))
 
 ## calculate term frequency-inverse document frequency (tf-idf)
+# Although for final ranks all words are included,
+# For topic modelling to better cluster the topics, 
+# only words that are meaningful(not the too common word or not error) are considered
 tf <- lyr[,-1]
 idf <- log(nrow(lyr[,-1])/colSums(lyr[,-1]))
 tfidf <- lyr[,-1]
